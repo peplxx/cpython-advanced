@@ -19,3 +19,17 @@
 **Источники:**
 - [PEP 703 — Making the GIL Optional](https://peps.python.org/pep-0703/) — описывает `_PyParkingLot` и почему per-object locking увеличивает реальный contention
 - [Free threading HOWTO — Python docs](https://docs.python.org/3/howto/free-threading-python.html) — официальное руководство по free-threaded сборке
+
+---
+
+## 04. GIL benchmark
+
+**Ожидаемое поведение:** 3.12 и 3.13 (с GIL) — плоские линии, 3.13t и 3.14t (без GIL) — убывающие кривые с ростом потоков.
+
+**Неожиданное наблюдение:** Python 3.14 (с GIL) ведёт себя как free-threaded сборка — wall time падает с ~0.27s (1 поток) до ~0.06s (8 потоков), аналогично 3.14t.
+
+**Гипотеза:** Python 3.14 включает экспериментальный JIT-компилятор. Горячий цикл `total += i * i` компилируется в нативный код, который может выполняться без удержания GIL или с существенно более коротким интервалом между его освобождениями — что и даёт эффект, похожий на параллелизм.
+
+**Источники:**
+- [PEP 744 — JIT Compilation](https://peps.python.org/pep-0744/) — описывает copy-and-patch JIT, добавленный в CPython 3.13+
+- [What's New in Python 3.14](https://docs.python.org/3.14/whatsnew/3.14.html) — список изменений интерпретатора
