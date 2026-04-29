@@ -3,7 +3,7 @@ from pathlib import Path
 
 nox.options.default_venv_backend = "uv"
 
-PYTHON_VERSIONS = ["3.13", "3.13t", "3.14", "3.14t"]
+PYTHON_VERSIONS = ["3.12", "3.13", "3.13t", "3.14", "3.14t"]
 RESULTS_DIR = Path("results")
 
 

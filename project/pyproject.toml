@@ -8,4 +8,5 @@ dependencies = [
     "nox>=2026.4.10",
     "pandas>=2.0",
     "plotly>=6.7.0",
+    "ruff>=0.15.12",
 ]
