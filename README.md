@@ -11,10 +11,12 @@ This repository contains ongoing work for the **CPython Advanced** course.
 │   ├── # Completed homeworks
 │   ├── OOP Part 1 [x] 
 │   └── OOP Part 2 [x]
+│   └── Processes&asyncio&mp [x]
+│   └── import scope [x]
 ├── project
-│   └── # TO BE DONE
+│   └── DONE
 ├── talk
-│   └── # TO BE DONE
+│   └── DONE
 ```
 
 ## License
