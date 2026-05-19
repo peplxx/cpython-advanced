@@ -5,6 +5,7 @@ requires-python = ">=3.13"
 dependencies = [
     "asyncio>=4.0.0",
     "ipykernel>=7.2.0",
+    "kaleido>=1.2.0",
     "nbformat>=5.10.4",
     "nox>=2026.4.10",
     "pandas>=2.0",

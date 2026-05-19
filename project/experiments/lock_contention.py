@@ -61,7 +61,7 @@ async def _asyncio_contended(iterations: int, n_tasks: int) -> float:
     return max(await asyncio.gather(*[task() for _ in range(n_tasks)]))
 
 
-def bench_asyncio(iterations: int = ITERATIONS, worker_counts: tuple = (1, 2, 3, 4, 5, 6, 7)) -> pd.DataFrame:
+def bench_asyncio(iterations: int = ITERATIONS, worker_counts: tuple = (1, 2, 3, 4, 5, 6, 7, 8)) -> pd.DataFrame:
     return pd.DataFrame([
         _row("asyncio.Lock", n, asyncio.run(_asyncio_contended(iterations, n)), iterations)
         for n in worker_counts
@@ -76,7 +76,7 @@ def _mp_worker(lock, iterations: int) -> None:
             pass
 
 
-def bench_multiprocessing(iterations: int = ITERATIONS_MP, worker_counts: tuple = (1, 2, 3, 4, 5, 6, 7)) -> pd.DataFrame:
+def bench_multiprocessing(iterations: int = ITERATIONS_MP, worker_counts: tuple = (1, 2, 3, 4, 5, 6, 7, 8)) -> pd.DataFrame:
     rows = []
     for n in worker_counts:
         lock = multiprocessing.Lock()

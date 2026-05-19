@@ -6,7 +6,6 @@ import time
 
 import pandas as pd
 
-# TODO: подумать на счет таймингов и интерпритации результатов
 CONTEXT_SWITCH_DELAY = 0.001
 
 
@@ -100,9 +99,6 @@ class RaceConditionBenchmark:
         self.increments = increments or 500
 
     def run(self) -> pd.DataFrame:
-        import sys
-        python_version = sys.version.split()[0]
-
         rows = []
         for tasks in self.tasks_values:
             for case_name, fn in self.cases:
@@ -110,7 +106,6 @@ class RaceConditionBenchmark:
                 result = fn(tasks, self.increments)
                 elapsed = time.perf_counter() - t0
                 rows.append({
-                    "python_version": python_version,
                     "case":           case_name,
                     "tasks":          tasks,
                     "result":         result,
