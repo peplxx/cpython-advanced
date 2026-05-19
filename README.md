@@ -17,6 +17,8 @@ This repository contains ongoing work for the **CPython Advanced** course.
 │   └── DONE
 ├── talk
 │   └── DONE
+├── lab
+    └── DONE
 ```
 
 ## License
