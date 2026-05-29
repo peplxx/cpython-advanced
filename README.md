@@ -1,24 +1,27 @@
 # CPython Advanced
 
-This repository contains ongoing work for the **CPython Advanced** course.  
+This repository contains completed work for the **CPython Advanced** course.  
 
 ---
 
-## Repository Structure
+## Repository Content
+
 ```bash
 ./
 ├── homeworks
-│   ├── # Completed homeworks
-│   ├── OOP Part 1 [x] 
-│   └── OOP Part 2 [x]
-│   └── Processes&asyncio&mp [x]
-│   └── import scope [x]
+│   ├── OOP Part 1     [x] 
+│   └── OOP Part 2     [x]
+│   └── Multithreading [x]
+│   └── Import Scopes  [x]
+│
 ├── project
-│   └── DONE
+│   └── Talk Practical Experiments [x]
+│
 ├── talk
-│   └── DONE
+│   └── Talk Presentation & Rendered Figures [x]
+│
 ├── lab
-    └── DONE
+    └── Bounded Buffer Implementation [x]
 ```
 
 ## License
